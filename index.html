@@ -3,196 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WoWzBD | Traveler & Tech</title>
+    <title>WoWzBD | World Cup 2026 Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #3b82f6;
-            --bg: #f8fafc;
-            --white: #ffffff;
-            --text: #334155;
+            /* FIFA 2026 Official Inspired Palette */
+            --fifa-blue: #2A398D; /* Deep Navy Blue */
+            --fifa-green: #3CAC3B; /* Grass Green */
+            --fifa-red: #E61D25; /* Vibrant Red */
+            --fifa-gold: #FFD700; /* Trophy Gold */
+            --bg-light: #F0F4F8;
+            --text-dark: #1A1A1A;
+            --white: #FFFFFF;
         }
 
+        * { box-sizing: border-box; }
         body { 
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Poppins', sans-serif; 
             margin: 0; 
-            background: var(--bg); 
-            color: var(--text); 
+            background: var(--bg-light); 
+            color: var(--text-dark); 
             scroll-behavior: smooth;
         }
 
+        /* Animated World Cup Header */
         header { 
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
-                        url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(135deg, rgba(42, 57, 141, 0.9), rgba(60, 172, 59, 0.8)), 
+                        url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white); 
-            padding: 8rem 1rem; 
+            padding: 10rem 1rem; 
             text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
         }
 
+        header h1 { 
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 10vw, 5rem); 
+            margin: 0; 
+            text-transform: uppercase;
+            text-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        header p { font-size: 1.4rem; font-weight: 300; background: rgba(0,0,0,0.2); display: inline-block; padding: 5px 20px; border-radius: 50px; }
+
+        /* Colorful Nav */
         nav { 
             background: var(--white); 
             padding: 1rem; 
-            text-align: center; 
             position: sticky; 
             top: 0; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
 
         nav a { 
-            color: var(--primary); 
-            margin: 0 12px; 
+            color: var(--fifa-blue); 
             text-decoration: none; 
-            font-weight: 600; 
+            font-weight: 700; 
             font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
             text-transform: uppercase;
+        }
+
+        nav a:hover { background: var(--fifa-blue); color: var(--white); }
+
+        main { padding: 40px 20px; max-width: 1100px; margin: auto; }
+
+        /* Multi-Color Sections */
+        section { 
+            background: var(--white);
+            margin-bottom: 50px; 
+            padding: 40px; 
+            border-radius: 30px;
+            border-top: 10px solid var(--fifa-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        section:nth-of-type(2) { border-top-color: var(--fifa-green); }
+        section:nth-of-type(3) { border-top-color: var(--fifa-red); }
+        section:nth-of-type(4) { border-top-color: var(--fifa-gold); }
+
+        h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: var(--fifa-blue); margin-bottom: 25px; }
+
+        /* World Cup Stats Cards */
+        .grid-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
             transition: 0.3s;
         }
 
-        nav a:hover { color: var(--accent); }
+        .stat-blue { background: var(--fifa-blue); }
+        .stat-green { background: var(--fifa-green); }
+        .stat-gold { background: var(--fifa-gold); color: var(--text-dark); }
 
-        main { padding: 40px 20px; max-width: 900px; margin: auto; }
-
-        section { 
-            background: var(--white);
-            margin-bottom: 40px; 
-            padding: 35px; 
+        /* Fan Zone Styling */
+        .fan-zone {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 25px; }
-
-        /* গ্যালারি গ্রিড */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            text-align: center;
+            color: var(--text-dark);
+            border: 4px solid var(--white);
         }
 
         .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .gallery img:hover { transform: scale(1.03); }
-
-        /* ভিডিও ইমবেড */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-top: 20px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 250px; object-fit: cover;
+            border-radius: 20px; border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .btn {
-            background: var(--accent);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            display: inline-block;
-            text-decoration: none;
-            transition: 0.3s;
-            margin-top: 15px;
+            background: var(--fifa-red);
+            color: white; padding: 15px 35px; border-radius: 50px;
+            text-decoration: none; display: inline-block; font-weight: bold;
+            box-shadow: 0 5px 15px rgba(230, 29, 37, 0.4);
         }
 
-        .btn:hover { background: var(--primary); transform: translateY(-2px); }
-
-        footer { background: var(--primary); color: white; text-align: center; padding: 3rem; }
+        footer { background: var(--fifa-blue); color: white; text-align: center; padding: 4rem 1rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>WoWzBD</h1>
-        <p>Exploring Places | Telling Stories | Mastering Code</p>
+        <h1>WE ARE 26</h1>
+        <p>WoWzBD | Traveler • Tech • Football</p>
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#blog">Blog</a> 
-        <a href="#story">My Story</a>
-        <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
+        <a href="#fifa">Fan Zone</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#skills">Roadmap</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <main>
-        <!-- Blog & Video Section -->
-        <section id="blog">
-            <h2>Blog & YouTube</h2>
-            <p>আমার ইউটিউব চ্যানেলের লেটেস্ট ভিডিওটি সরাসরি এখান থেকেই দেখে নিন:</p>
-            <div class="video-container">
-                <!-- আপনার ভিডিওর ID দিয়ে নিচের লিঙ্কটি বদলাতে পারেন -->
-                <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=WoWzBD" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <a href="https://www.youtube.com/channel/UCoQD8o01QRz-L4U58rX1tHw" target="_blank" class="btn">Subscribe to WoWzBD</a>
-        </section>
-
-        <!-- My Story Section -->
-        <section id="story">
-            <h2>My Story</h2>
-            <div style="line-height: 1.8; color: #475569;">
-                <p>আমি মনে করি, প্রতিটি ভ্রমণের পেছনে একটি গল্প থাকে। পাহাড়ে রাত কাটানো হোক কিংবা অচেনা শহরের অলিগলি—আমার গল্পগুলো আপনার সাথে শেয়ার করতে চাই।</p>
-                <blockquote>"The world is a book and those who do not travel read only one page."</blockquote>
-            </div>
-        </section>
-
-        <!-- Travel Gallery -->
-        <section id="gallery">
-            <h2>Travel Gallery</h2>
-            <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=500&q=60" alt="Travel 1">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=60" alt="Travel 2">
-                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=60" alt="Travel 3">
-            </div>
-        </section>
-
-        <!-- About Me Section -->
         <section id="about">
-            <h2>About the Traveler</h2>
-            <div style="text-align: center;">
-                <img src="myimage.png" alt="WoWzBD Profile" style="width:150px; border-radius:50%; border:5px solid var(--bg);">
-                <p style="font-size: 1.1rem; margin-top: 15px;">
-                    আমি <b>WoWzBD</b>। বর্তমানে আমি টেকনোলজি এবং ট্রাভেলিংকে একসাথে করার চেষ্টা করছি। <br>
-                    আমি শিখছি <b>Linux, HTML</b> এবং <b>Python</b>।
-                </p>
+            <h2>The Journey Continues</h2>
+            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 30px;">
+                <img src="myimage.png" alt="WoWzBD" style="width: 180px; border-radius: 50%; border: 6px solid var(--fifa-gold);" onerror="this.src='https://www.w3schools.com/howto/img_avatar.png'">
+                <div style="flex: 1;">
+                    <p>আমি <b>WoWzBD</b>। ট্রাভেলিং আমার প্যাশন আর ফুটবল আমার ইমোশন। ২০২৬ বিশ্বকাপের রঙিন আমেজ এখন থেকেই আমার ওয়েবসাইটে!</p>
+                    <div class="grid-stats">
+                        <div class="stat-card stat-blue"><h3>15+</h3><p>Districts</p></div>
+                        <div class="stat-card stat-green"><h3>2026</h3><p>Target Year</p></div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <section id="fifa">
+            <h2>FIFA World Cup 2026 Fan Zone</h2>
+            <div class="fan-zone">
+                <h3 style="font-family: 'Oswald', sans-serif; font-size: 2rem;">🏆 READY FOR THE BIGGEST STAGE?</h3>
+                <p>মেক্সিকো, কানাডা এবং ইউএসএ—সব মিলিয়ে ৪৮টি দলের লড়াই।</p>
+                <div class="grid-stats">
+                    <div class="stat-card" style="background: rgba(255,255,255,0.3);"><b>Teams</b><br>48</div>
+                    <div class="stat-card" style="background: rgba(255,255,255,0.3);"><b>Matches</b><br>104</div>
+                    <div class="stat-card" style="background: rgba(255,255,255,0.3);"><b>Final</b><br>July 19</div>
+                </div>
+                <br>
+                <a href="https://www.youtube.com/channel/UCoQD8o01QRz-L4U58rX1tHw" target="_blank" class="btn">SUBSCRIBE FOR LIVE UPDATES</a>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>World Cup & Travel Snaps</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=500&q=60" alt="Football">
+                <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=500&q=60" alt="Stadium">
+                <img src="https://images.unsplash.com/photo-1518091043644-c1d445bcc97a?auto=format&fit=crop&w=500&q=60" alt="Soccer Ball">
+            </div>
+        </section>
+
         <section id="contact">
-            <h2>Let's Connect</h2>
+            <h2>Send Your Prediction</h2>
             <form>
-                <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #cbd5e1;"><br>
-                <textarea placeholder="Write your message..." style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #cbd5e1; height: 100px;"></textarea>
-                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                <input type="text" placeholder="Your Champion Team?" style="width: 100%; padding: 15px; margin-bottom: 10px; border-radius: 10px; border: 2px solid var(--fifa-blue);">
+                <button type="submit" class="btn" style="width: 100%; border: none;">SUBMIT TO WoWzBD</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 WoWzBD | All Rights Reserved</p>
-        <p>Follow me on YouTube & Stay Tuned!</p>
+        <p style="font-family: 'Oswald', sans-serif; font-size: 2rem;">#WEARE26</p>
+        <p>&copy; 2026 WoWzBD | The World is Our Pitch</p>
     </footer>
 
 </body>

@@ -70,54 +70,41 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <main>
-        <!-- Traveler Section -->
+        <main>
+        <!-- ১. নিজের কথা এবং প্রোফাইল ছবি -->
         <section id="about">
             <h2>🌍 Traveler's Diary</h2>
-            <p>আমি <b>WoWzBD</b>। পাহাড়ের চূড়া থেকে সমুদ্রের গভীরতা—সবই আমার পছন্দের। আমি মনে করি প্রতিটি জায়গার একটি আলাদা গল্প আছে।</p>
-            <div class="grid-container">
-                <div class="stat-card stat-blue"><h3>15+</h3><p>Districts Explored</p></div>
-                <div class="stat-card stat-green"><h3>20k+</h3><p>KM Traveled</p></div>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <!-- এই লিঙ্কে তোমার প্রোফাইল ছবি দেখা যাবে -->
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="WoWzBD" style="width: 150px; border-radius: 50%; border: 5px solid var(--fifa-gold);">
             </div>
+            <p>আমি <b>WoWzBD</b>। পাহাড়ের চূড়া থেকে সমুদ্রের গভীরতা—সবই আমার পছন্দের। আমি মনে করি প্রতিটি জায়গার একটি আলাদা গল্প আছে। বর্তমানে আমি কোডিং এবং ভ্রমণের রোমাঞ্চকে একসাথে উপভোগ করছি।</p>
         </section>
 
-        <!-- FIFA World Cup Stats -->
+        <!-- ২. ফিফা বিশ্বকাপ ২০২৬ পরিসংখ্যান -->
         <section id="fifa">
             <h2>🏆 World Cup 2026 Stats</h2>
-            <p>২০২৬ বিশ্বকাপে মোট ৪৮টি দল লড়বে সেরা হওয়ার জন্য। এক নজরে দেখে নিন ফেভারিট দলগুলোর পরিসংখ্যান:</p>
-            <table class="fifa-table">
-                <thead>
-                    <tr>
-                        <th>Team</th>
-                        <th>Rank</th>
-                        <th>World Cups</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>🇦🇷 Argentina</td><td>1</td><td>3</td></tr>
-                    <tr><td>🇫🇷 France</td><td>2</td><td>2</td></tr>
-                    <tr><td>🇧🇷 Brazil</td><td>5</td><td>5</td></tr>
-                    <tr><td>🇪🇸 Spain</td><td>3</td><td>1</td></tr>
-                </tbody>
+            <p>ইতিহাসের সবচেয়ে বড় ফুটবল আসর আসছে! ফেভারিট দলগুলোর বর্তমান অবস্থা দেখে নিন:</p>
+            <table class="fifa-table" style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                <tr style="background: var(--fifa-blue); color: white;">
+                    <th style="padding: 10px; text-align: left;">Team</th>
+                    <th style="padding: 10px; text-align: left;">Rank</th>
+                    <th style="padding: 10px; text-align: left;">Titles</th>
+                </tr>
+                <tr><td>🇦🇷 Argentina</td><td>1</td><td>3</td></tr>
+                <tr><td>🇫🇷 France</td><td>2</td><td>2</td></tr>
+                <tr><td>🇧🇷 Brazil</td><td>5</td><td>5</td></tr>
             </table>
         </section>
 
-        <!-- Fan Zone -->
-        <section id="fan-zone">
-            <div class="fan-zone">
-                <h3 style="font-family: Oswald; font-size: 2.2rem; margin:0;">⚽ WoWzBD FAN ZONE</h3>
-                <p>সবচেয়ে বড় ফুটবল আসরের লাইভ আপডেট এবং ট্রাভেল ভ্লগ পেতে আমাদের সাথে থাকুন।</p>
-                <a href="https://www.youtube.com/channel/UCoQD8o01QRz-L4U58rX1tHw" target="_blank" class="btn">SUBSCRIBE ON YOUTUBE</a>
+        <!-- ৩. ভ্রমণের ছবিগুলো (গ্যালারি) -->
+        <section id="gallery">
+            <h2>📸 Travel Snapshots</h2>
+            <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+                <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=500&q=60" alt="Cox's Bazar" style="width:100%; border-radius:15px; height: 200px; object-fit: cover;">
+                <img src="https://images.unsplash.com/photo-1623492701902-47dc207df5dc?auto=format&fit=crop&w=500&q=60" alt="Sajek" style="width:100%; border-radius:15px; height: 200px; object-fit: cover;">
+                <img src="https://images.unsplash.com/photo-1590001158193-790f3c44e99c?auto=format&fit=crop&w=500&q=60" alt="Bandarban" style="width:100%; border-radius:15px; height: 200px; object-fit: cover;">
             </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact">
-            <h2>Let's Connect</h2>
-            <form>
-                <input type="text" placeholder="Your Favorite Team?" style="width: 100%; padding: 15px; margin-bottom: 10px; border-radius: 10px; border: 2px solid #ddd;">
-                <button type="submit" class="btn" style="width: 100%; border: none;">SUBMIT PREDICTION</button>
-            </form>
         </section>
     </main>
 

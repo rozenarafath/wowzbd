@@ -7,205 +7,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* FIFA 2026 Official Inspired Palette */
-            --fifa-blue: #2A398D; /* Deep Navy Blue */
-            --fifa-green: #3CAC3B; /* Grass Green */
-            --fifa-red: #E61D25; /* Vibrant Red */
-            --fifa-gold: #FFD700; /* Trophy Gold */
+            --fifa-blue: #2A398D;
+            --fifa-green: #3CAC3B;
+            --fifa-red: #E61D25;
+            --fifa-gold: #FFD700;
             --bg-light: #F0F4F8;
-            --text-dark: #1A1A1A;
             --white: #FFFFFF;
         }
 
-        * { box-sizing: border-box; }
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            margin: 0; 
-            background: var(--bg-light); 
-            color: var(--text-dark); 
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg-light); scroll-behavior: smooth; }
 
-        /* Animated World Cup Header */
         header { 
             background: linear-gradient(135deg, rgba(42, 57, 141, 0.9), rgba(60, 172, 59, 0.8)), 
                         url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white); 
-            padding: 10rem 1rem; 
-            text-align: center;
+            background-size: cover; padding: 10rem 1rem; text-align: center; color: white;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
         }
 
-        header h1 { 
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(3rem, 10vw, 5rem); 
-            margin: 0; 
-            text-transform: uppercase;
-            text-shadow: 4px 4px 10px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-        }
+        header h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3rem, 10vw, 5rem); margin: 0; text-transform: uppercase; }
 
-        header p { font-size: 1.4rem; font-weight: 300; background: rgba(0,0,0,0.2); display: inline-block; padding: 5px 20px; border-radius: 50px; }
-
-        /* Colorful Nav */
-        nav { 
-            background: var(--white); 
-            padding: 1rem; 
-            position: sticky; 
-            top: 0; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        nav a { 
-            color: var(--fifa-blue); 
-            text-decoration: none; 
-            font-weight: 700; 
-            font-size: 13px;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-
-        nav a:hover { background: var(--fifa-blue); color: var(--white); }
+        nav { background: white; padding: 1rem; position: sticky; top: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 1000; text-align: center; }
+        nav a { color: var(--fifa-blue); text-decoration: none; font-weight: 700; margin: 0 10px; text-transform: uppercase; }
 
         main { padding: 40px 20px; max-width: 1100px; margin: auto; }
+        section { background: white; margin-bottom: 50px; padding: 40px; border-radius: 30px; border-top: 10px solid var(--fifa-blue); }
 
-        /* Multi-Color Sections */
-        section { 
-            background: var(--white);
-            margin-bottom: 50px; 
-            padding: 40px; 
-            border-radius: 30px;
-            border-top: 10px solid var(--fifa-blue);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        section:nth-of-type(2) { border-top-color: var(--fifa-green); }
-        section:nth-of-type(3) { border-top-color: var(--fifa-red); }
-        section:nth-of-type(4) { border-top-color: var(--fifa-gold); }
-
-        h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: var(--fifa-blue); margin-bottom: 25px; }
-
-        /* World Cup Stats Cards */
-        .grid-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .stat-card {
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-            transition: 0.3s;
-        }
-
-        .stat-blue { background: var(--fifa-blue); }
-        .stat-green { background: var(--fifa-green); }
-        .stat-gold { background: var(--fifa-gold); color: var(--text-dark); }
-
-        /* Fan Zone Styling */
-        .fan-zone {
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            color: var(--text-dark);
-            border: 4px solid var(--white);
-        }
-
-        .gallery img {
-            width: 100%; height: 250px; object-fit: cover;
-            border-radius: 20px; border: 4px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn {
-            background: var(--fifa-red);
-            color: white; padding: 15px 35px; border-radius: 50px;
-            text-decoration: none; display: inline-block; font-weight: bold;
-            box-shadow: 0 5px 15px rgba(230, 29, 37, 0.4);
-        }
+        .fan-zone { background: linear-gradient(45deg, #FFD700, #FFA500); padding: 30px; border-radius: 20px; text-align: center; }
+        .btn { background: var(--fifa-red); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 20px; }
 
         footer { background: var(--fifa-blue); color: white; text-align: center; padding: 4rem 1rem; }
     </style>
 </head>
 <body>
-
     <header>
         <h1>WE ARE 26</h1>
-        <p>WoWzBD | Traveler • Tech • Football</p>
+        <p>WoWzBD | Traveler • Tech • Football Enthusiast</p>
     </header>
 
     <nav>
         <a href="#about">About</a>
         <a href="#fifa">Fan Zone</a>
         <a href="#gallery">Gallery</a>
-        <a href="#skills">Roadmap</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <main>
         <section id="about">
             <h2>The Journey Continues</h2>
-            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 30px;">
-                <img src="myimage.png" alt="WoWzBD" style="width: 180px; border-radius: 50%; border: 6px solid var(--fifa-gold);" onerror="this.src='https://www.w3schools.com/howto/img_avatar.png'">
-                <div style="flex: 1;">
-                    <p>আমি <b>WoWzBD</b>। ট্রাভেলিং আমার প্যাশন আর ফুটবল আমার ইমোশন। ২০২৬ বিশ্বকাপের রঙিন আমেজ এখন থেকেই আমার ওয়েবসাইটে!</p>
-                    <div class="grid-stats">
-                        <div class="stat-card stat-blue"><h3>15+</h3><p>Districts</p></div>
-                        <div class="stat-card stat-green"><h3>2026</h3><p>Target Year</p></div>
-                    </div>
-                </div>
-            </div>
+            <p>আমি <b>WoWzBD</b>। ট্রাভেলিং আমার প্যাশন আর ফুটবল আমার ইমোশন। ২০২৬ বিশ্বকাপের রঙিন আমেজ এখন থেকেই আমার ওয়েবসাইটে!</p>
         </section>
 
         <section id="fifa">
-            <h2>FIFA World Cup 2026 Fan Zone</h2>
             <div class="fan-zone">
                 <h3 style="font-family: 'Oswald', sans-serif; font-size: 2rem;">🏆 READY FOR THE BIGGEST STAGE?</h3>
-                <p>মেক্সিকো, কানাডা এবং ইউএসএ—সব মিলিয়ে ৪৮টি দলের লড়াই।</p>
-                <div class="grid-stats">
-                    <div class="stat-card" style="background: rgba(255,255,255,0.3);"><b>Teams</b><br>48</div>
-                    <div class="stat-card" style="background: rgba(255,255,255,0.3);"><b>Matches</b><br>104</div>
-                    <div class="stat-card" style="background: rgba(255,255,255,0.3);"><b>Final</b><br>July 19</div>
-                </div>
-                <br>
-                <a href="https://www.youtube.com/channel/UCoQD8o01QRz-L4U58rX1tHw" target="_blank" class="btn">SUBSCRIBE FOR LIVE UPDATES</a>
+                <p>বিশ্বকাপের সব লেটেস্ট আপডেট পেতে আমার চ্যানেলে সাবস্ক্রাইব করুন।</p>
+                <a href="https://www.youtube.com/channel/UCoQD8o01QRz-L4U58rX1tHw" target="_blank" class="btn">SUBSCRIBE NOW</a>
             </div>
-        </section>
-
-        <section id="gallery">
-            <h2>World Cup & Travel Snaps</h2>
-            <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=500&q=60" alt="Football">
-                <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=500&q=60" alt="Stadium">
-                <img src="https://images.unsplash.com/photo-1518091043644-c1d445bcc97a?auto=format&fit=crop&w=500&q=60" alt="Soccer Ball">
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Send Your Prediction</h2>
-            <form>
-                <input type="text" placeholder="Your Champion Team?" style="width: 100%; padding: 15px; margin-bottom: 10px; border-radius: 10px; border: 2px solid var(--fifa-blue);">
-                <button type="submit" class="btn" style="width: 100%; border: none;">SUBMIT TO WoWzBD</button>
-            </form>
         </section>
     </main>
 
     <footer>
         <p style="font-family: 'Oswald', sans-serif; font-size: 2rem;">#WEARE26</p>
-        <p>&copy; 2026 WoWzBD | The World is Our Pitch</p>
+        <p>&copy; 2026 WoWzBD | All Rights Reserved</p>
     </footer>
-
 </body>
 </html>

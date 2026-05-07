@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoWzBD | Traveler & Tech</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --text: #334155;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: var(--bg); 
+            color: var(--text); 
+            scroll-behavior: smooth;
+        }
+
+        header { 
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white); 
+            padding: 8rem 1rem; 
+            text-align: center;
+        }
+
+        nav { 
+            background: var(--white); 
+            padding: 1rem; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        nav a { 
+            color: var(--primary); 
+            margin: 0 12px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        main { padding: 40px 20px; max-width: 900px; margin: auto; }
+
+        section { 
+            background: var(--white);
+            margin-bottom: 40px; 
+            padding: 35px; 
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 25px; }
+
+        /* গ্যালারি গ্রিড */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover { transform: scale(1.03); }
+
+        /* ভিডিও ইমবেড */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-block;
+            text-decoration: none;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn:hover { background: var(--primary); transform: translateY(-2px); }
+
+        footer { background: var(--primary); color: white; text-align: center; padding: 3rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>WoWzBD</h1>
+        <p>Exploring Places | Telling Stories | Mastering Code</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#blog">Blog</a> 
+        <a href="#story">My Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <!-- Blog & Video Section -->
+        <section id="blog">
+            <h2>Blog & YouTube</h2>
+            <p>আমার ইউটিউব চ্যানেলের লেটেস্ট ভিডিওটি সরাসরি এখান থেকেই দেখে নিন:</p>
+            <div class="video-container">
+                <!-- আপনার ভিডিওর ID দিয়ে নিচের লিঙ্কটি বদলাতে পারেন -->
+                <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=WoWzBD" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.youtube.com/channel/UCoQD8o01QRz-L4U58rX1tHw" target="_blank" class="btn">Subscribe to WoWzBD</a>
+        </section>
+
+        <!-- My Story Section -->
+        <section id="story">
+            <h2>My Story</h2>
+            <div style="line-height: 1.8; color: #475569;">
+                <p>আমি মনে করি, প্রতিটি ভ্রমণের পেছনে একটি গল্প থাকে। পাহাড়ে রাত কাটানো হোক কিংবা অচেনা শহরের অলিগলি—আমার গল্পগুলো আপনার সাথে শেয়ার করতে চাই।</p>
+                <blockquote>"The world is a book and those who do not travel read only one page."</blockquote>
+            </div>
+        </section>
+
+        <!-- Travel Gallery -->
+        <section id="gallery">
+            <h2>Travel Gallery</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=500&q=60" alt="Travel 1">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=60" alt="Travel 2">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=60" alt="Travel 3">
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About the Traveler</h2>
+            <div style="text-align: center;">
+                <img src="myimage.png" alt="WoWzBD Profile" style="width:150px; border-radius:50%; border:5px solid var(--bg);">
+                <p style="font-size: 1.1rem; margin-top: 15px;">
+                    আমি <b>WoWzBD</b>। বর্তমানে আমি টেকনোলজি এবং ট্রাভেলিংকে একসাথে করার চেষ্টা করছি। <br>
+                    আমি শিখছি <b>Linux, HTML</b> এবং <b>Python</b>।
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <form>
+                <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #cbd5e1;"><br>
+                <textarea placeholder="Write your message..." style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #cbd5e1; height: 100px;"></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WoWzBD | All Rights Reserved</p>
+        <p>Follow me on YouTube & Stay Tuned!</p>
+    </footer>
+
+</body>
+</html>
